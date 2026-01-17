@@ -1,4 +1,4 @@
-# TBP-TTT_projekt  
+# TBP-Mobilna aplikacija za igru Križić kružić  
 Poveznica na .apk za mobilnu aplikaciju:  
 https://drive.google.com/file/d/1CmE_k79Irt7aKKlu8-76TWCdT4FoifZ2/view?usp=sharing  
   
@@ -38,4 +38,6 @@ a na Linux pomoću ip addr show ili ifconfig.
 ### Pokretanje igre na mobilnom uređaju  
 Pokrenuti .apk kako bi se aplikacija instalirala.  
 Kada je aplikacija instalirana i pokrenuta,  
-upisati IP servera na način: http://[IP]:8000
+upisati IP servera na način: http://[IP]:8000  
+BITNO: mobilni uređaj i uređaj servera moraju biti spojeni na istu mrežu.  
+Preporuča se korištenje hotspot mreže preko mobilnog uređaja, ako je moguće.
