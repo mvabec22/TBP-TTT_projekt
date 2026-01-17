@@ -35,7 +35,7 @@ uvicorn main:app --host 0.0.0.0 --port 8000
   
 Provjeriti IP adresu računala, na Windows pomoću ipconfig  
 a na Linux pomoću ip addr show ili ifconfig.
-
+  
 ### Pokretanje igre na mobilnom uređaju  
 Pokrenuti .apk kako bi se aplikacija instalirala.  
 Kada je aplikacija instalirana i pokrenuta,  
