@@ -32,6 +32,7 @@ Datoteka init_db.sql se nalazi u backend/db.
 ### Pokretanje servera  
 Iz mape app:  
 uvicorn main:app --host 0.0.0.0 --port 8000  
+  
 Provjeriti IP adresu računala, na Windows pomoću ipconfig  
 a na Linux pomoću ip addr show ili ifconfig.
 
