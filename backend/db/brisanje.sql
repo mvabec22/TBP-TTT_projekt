@@ -1,0 +1,33 @@
+BEGIN;
+
+DROP FUNCTION IF EXISTS odigraj;
+DROP FUNCTION IF EXISTS provjeri_pobjedu;
+DROP FUNCTION IF EXISTS nakon_poteza;
+DROP TRIGGER IF EXISTS trg_nakon_poteza ON Potez;
+DROP FUNCTION IF EXISTS fn_povijest_igraca;
+DROP FUNCTION IF EXISTS registriraj_igraca;
+DROP FUNCTION IF EXISTS fn_ljestvica;
+DROP FUNCTION IF EXISTS nova_igra;
+DROP FUNCTION IF EXISTS predaja_igre;
+DROP FUNCTION IF EXISTS fn_dohvati_otvorene_igre;
+DROP FUNCTION IF EXISTS fn_provjeri_status_igre;
+DROP FUNCTION IF EXISTS fn_obrisi_igraca;
+
+DROP VIEW IF EXISTS view_povijest_igara;
+DROP VIEW IF EXISTS view_potezi;
+DROP VIEW IF EXISTS view_ljestvica;
+DROP VIEW IF EXISTS view_pobjednik_igre;
+DROP VIEW IF EXISTS view_igre;
+DROP VIEW IF EXISTS view_login;
+
+DROP TABLE IF EXISTS Potez CASCADE;
+DROP TABLE IF EXISTS Comp_igra CASCADE;
+DROP TABLE IF EXISTS Local_igra CASCADE;
+DROP TABLE IF EXISTS Igra CASCADE;
+DROP TABLE IF EXISTS Admin CASCADE;
+DROP TABLE IF EXISTS Igrac CASCADE;
+
+DROP TYPE IF EXISTS turn_enum;
+DROP TYPE IF EXISTS win_enum;
+
+COMMIT;
