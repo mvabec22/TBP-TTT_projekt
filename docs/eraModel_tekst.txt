@@ -1,0 +1,49 @@
+Igrač
+-kor_ime (varchar, PK, UNIQUE)
+-lozinka (varchar)
+-pobjede (int)
+-gubitci (int)
+-vrijeme_stvaranja (timestamp)
+
+Admin LIKE Igrač
+-kor_ime (varchar PK, UNIQUE)
+-lozinka (varchar)
+-pobjede (int)
+-gubitci (int)
+-vrijeme_stvaranja (timestamp)
+-admin_level (int)
+-permissions (text)
+-posljednji_login (timestamp)
+
+Igra - parent
+-id (int, PK, UNIQUE)
+-red (turn_enum[X,O, Done == igra je zavrsena])
+-pobjednik (win_enum[X, O, TRAJE == igra traje])
+-pocetak_igre (timestamp)
+-kraj_igre(timestamp)
+
+Comp_igra - INHERITS Igra
+-igracX (varchar, FK-Igrač.kor_ime)
+-igracO (varchar, FK-Igrač.kor_ime)
+
+Local_igra - INHERITS Igra
+-host (varchar, FK-Igrač.kor_ime)
+
+Potez
+-rb (int)
+-igra (int, FK)
+-igrac (varchar, FK-Igrač.kor_ime)
+-polje (point)
+-vrijeme_igranja (timestamp)
+
+Veze:
+Admin - nasljeđuje atribute iz Igrač
+ Comp_igra i Local_igra - Nasljeđuju Igra
+ Igrač:Comp_igra == 1:N, 1:N
+- Igrač može biti u više igara, ali u jednoj igri može biti samo jednom (2 veze, jedna za igračX, jedna za igračO)  
+ Igrač:Local_igra == 1:N
+- Jedan igrač može lokalno pokrenuti više igara kao domaćin  
+ Igrač:Potez == 1:N
+-Potez pripada samo jednom igraču, jedan igrač može napraviti više poteza
+ Potez:Igra == N:1
+-Potez može pripadati samo jednoj igri, igra može imati više poteza
